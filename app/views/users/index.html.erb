@@ -1,0 +1,31 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+     <%= render 'new', book: @book, user: current_user  %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h2>Users</h2>
+      <table class="table table-hover table-inverse">
+      <thead>
+      <tr>
+     
+       <th>image</th>
+       <th>name</th>
+       <th colspan="1"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %> 
+       <tr>
+        <td><%= image_tag user.get_image %></td>
+        <td><span><%= user.name %></span></td>
+        <td><%= link_to "Show", user_path(user.id) %></td>
+       </tr>
+      <% end %>
+      </tbody>
+      </table>
+   </div>
+  </div>
+ </div>
